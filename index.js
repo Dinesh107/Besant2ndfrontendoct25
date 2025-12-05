@@ -712,13 +712,10 @@
 // ****
 // callback - a function that is passed as an arugument to another function.
 
-
 // used to handle asysychrounous operations
 // read the file
 // Network requests
-// Interacting with database 
-
-
+// Interacting with database
 
 // hello(wait);
 
@@ -750,20 +747,17 @@
 //    console.log(`the answers is ${result}`);
 // }
 
-
 // function displayDom(result) {
 //    document.getElementById("h1").innerHTML = `The answer is ${result}`
 // }
 
-
 // Multiplication the numbers using callback
-// Delay message - setTimeout 
+// Delay message - setTimeout
 
 // forEach() - method used to itrate over the elments of an array and apply a specified function(callback)
 
 // array.forEach(callback);
-// element, index, array are provided 
-
+// element, index, array are provided
 
 // let numbers = [1, 2, 3, 4, 5, 6];
 
@@ -772,9 +766,8 @@
 // numbers.forEach(display);
 
 // function double(element, index, array) {
-//     array[index] = element * 2; 
+//     array[index] = element * 2;
 // }
-
 
 // // triple
 
@@ -782,15 +775,13 @@
 //       array[index] = Math.pow(element, 2);
 // }
 
-// // cubic 
+// // cubic
 
 // function display(element) {
 //    console.log(element);
 // }
 
-
 // let names = ["haamid", "isham", "akmal", "arsath"];
-
 
 // names.forEach(upperCase);
 // names.forEach(capitalize);
@@ -799,7 +790,7 @@
 //     array[index] = element.toUpperCase();
 // }
 
-// lowercase 
+// lowercase
 
 // function capitalize(element, index, array) {
 //     array[index] = element.charAt(0).toUpperCase() + element.slice(1);
@@ -815,13 +806,11 @@
 
 // .map() - accepts a callback and apllies that function to each element of ana array, then return a new array.
 
-
 // const numbers = [1, 2, 3, 4, 5];
 
 // const squares =  numbers.map(square);
 
 // console.log(squares);
-
 
 // function square(element) {
 //       return Math.pow(element, 2);
@@ -836,10 +825,7 @@
 // function upperCase(element) {
 //     return element.toUpperCase();
 
-// } 
-
-
-
+// }
 
 // const dates = ["2024-1-10", "2025-2-23", "2026-3-30"];
 
@@ -852,13 +838,9 @@
 //    return `${parts[2]}/${parts[1]}/${parts[0]}`
 // }
 
-
-// filter - creates new array by filtering out elements 
-
-
+// filter - creates new array by filtering out elements
 
 // let numbers = [1, 2, 3, 4, 5, 6, 7];
-
 
 // let evenNums = numbers.filter(isEven);
 
@@ -868,14 +850,11 @@
 //   return element % 2 === 0;
 // }
 
-
 //  let ages = [17, 23, 12, 10, 34, 56, 70];
-
 
 // const seniorCitzen = ages.filter(isSeniorCitzen);
 
 // console.log(seniorCitzen);
-
 
 //  function isSeniorCitzen(element) {
 //      return element >= 50;
@@ -891,10 +870,7 @@
 //     return element.length <= 6;
 // }
 
-
-
-// reduce - reduce the elemnet of an array to single value 
-
+// reduce - reduce the elemnet of an array to single value
 
 // const prices = [20, 40, 50, 5, 10];
 
@@ -907,14 +883,90 @@
 //      return previousEle + next;
 // }
 
-
 // const grades = [75, 80, 50, 90, 98, 95];
 
 // const maximum = grades.reduce(getMax);
 
 // console.log(maximum);
 
-
 // function getMax(acc, ele) {
 //    return Math.max(acc, ele);
 // }
+
+// function declartion - define a reusable bolck of code that performs a specifuc task
+
+// function hello() {
+//     console.log("hello");
+// }
+
+// function expression - a way to define function as values or variables
+
+// const hello = function() {
+//      console.log("hello hissam");
+// }
+
+// hello();
+
+// setTimeout(function(){
+//     console.log("hello hissam");
+// }, 3000);
+
+// const numbers = [1, 2, 3, 4, 5, 6];
+
+// const squares = numbers.map(function (element) {
+//    return Math.pow(element, 2);
+// });
+
+// const evenNums = numbers.filter(function(element){
+//     return element % 2 == 0;
+// });
+
+// const total = numbers.reduce(function(acc, ele){
+//     return acc + ele;
+// })
+
+// console.log(squares);
+// console.log(evenNums);
+// console.log(total);
+
+// arrow function - a consise way to wrute function expression
+
+// () => code
+
+// function hello() {
+//     console.log("hello");
+// }
+
+// const hello = function() {
+//     console.log("hello");
+// }
+
+// const hello = (name, age) => {
+//   console.log(`Hello ${name}`);
+//   console.log(`you are ${age} old`);
+// };
+
+// hello("hissam", 22);
+
+
+
+// setTimeout(function () {
+//     console.log("hello hissam");
+// }, 3000);
+
+// setTimeout(()=> console.log("hello hissam"), 3000);
+
+// function hello() {
+//     console.log("hello hissam");
+// }
+
+
+const numbers = [1, 2, 3, 4, 5, 6];
+
+const squares = numbers.map((element) => Math.pow(element, 2));
+const evenNums = numbers.filter((element) => element % 2 === 0);
+const total = numbers.reduce((acc, ele)=> acc + ele)
+
+console.log(squares);
+console.log(evenNums);
+console.log(total);
