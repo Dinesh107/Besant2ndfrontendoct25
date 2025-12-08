@@ -948,8 +948,6 @@
 
 // hello("hissam", 22);
 
-
-
 // setTimeout(function () {
 //     console.log("hello hissam");
 // }, 3000);
@@ -960,13 +958,143 @@
 //     console.log("hello hissam");
 // }
 
+// const numbers = [1, 2, 3, 4, 5, 6];
 
-const numbers = [1, 2, 3, 4, 5, 6];
+// const squares = numbers.map((elem
+// ent) => Math.pow(element, 2));
+// const evenNums = numbers.filter((element) => element % 2 === 0);
+// const total = numbers.reduce((acc, ele)=> acc + ele)
 
-const squares = numbers.map((element) => Math.pow(element, 2));
-const evenNums = numbers.filter((element) => element % 2 === 0);
-const total = numbers.reduce((acc, ele)=> acc + ele)
+// console.log(squares);
+// console.log(evenNums);
+// console.log(total);
 
-console.log(squares);
-console.log(evenNums);
-console.log(total);
+// destructuring - extract  values from arrays and object, then assign them to variables in a convenient way
+
+// [] = to perform array destructing
+// {} = to perform object destructing
+
+// way 1
+
+// swap the values of two varaibles
+
+// let a = 1;
+// let b = 2;
+
+// [a, b] = [b , a];
+
+// console.log(a);
+// console.log(b);
+
+// way 2 - swap 2 elements in an array
+
+// const bikes = ["jupiter", "activa", "RE350", "R15"];
+
+// [bikes[0], bikes[3]] = [ bikes[3], bikes[0]];
+
+// console.log(bikes);
+
+//way 3 -  assign array elements to variables
+
+// const bikes = ["jupiter", "activa", "RE350", "R15"];
+
+// const [firstBike, secondBike, thirdBike, ...extraBike] = bikes;
+
+// console.log(firstBike);
+// console.log(secondBike);
+// console.log(thirdBike);
+// console.log(extraBike);
+
+// way 4 - extract values from objects
+
+// const person1 = {
+//     firstName: "hissam",
+//     lastName: "student",
+//     age: 20,
+//     job: "software engineer",
+
+// }
+// const person2 = {
+//     firstName: "aslam",
+//     lastName: "student",
+//     age: 21,
+//     job: "Unemployed",
+// }
+
+// const {firstName, lastName, age, job} = person2;
+
+// console.log(firstName);
+// console.log(lastName);
+// console.log(age);
+// console.log(job);
+
+// way 5 - Destructing in function paramters
+
+// function displayPerson({firstName, lastName, age, job}) {
+//     console.log(`name: ${firstName} ${lastName}`);
+//     console.log(`age: ${age}`);
+//     console.log(`job: ${job}`);
+// }
+
+// const person1 = {
+//     firstName: "hissam",
+//     lastName: "student",
+//     age: 20,
+//     job: "software engineer",
+
+// }
+
+// const person2 = {
+//     firstName: "aslam",
+//     lastName: "student",
+//     age: 21,
+//     job: "Unemployed",
+// }
+
+// displayPerson(person1);
+
+// callback hell - stitution  in js where callbacks are nested within other callbakc to the degree where the code to difficult to read
+
+// old pattern to handle asynchrouns code
+// use promises + asyna/await to avoid the call back hell
+
+// function task1(callback) {
+//   setTimeout(() => {
+//     console.log("task1 complete");
+//     callback();
+//   }, 2000);
+// }
+
+// function task2(callback) {
+//   setTimeout(() => {
+//     console.log("task2 complete");
+//     callback();
+//   }, 1000);
+// }
+// function task3(callback) {
+//   setTimeout(() => {
+//     console.log("task3 complete");
+//     callback();
+//   }, 3000);
+// }
+// function task4(callback) {
+//   setTimeout(() => {
+//     console.log("task4 complete");
+//     callback();
+//   }, 1500);
+// }
+
+// task1();
+// task2();
+// task3();
+// task4();
+
+// task1(() => {
+//   task2(() => {
+//     task3(() => {
+//       task4(() => {
+//         console.log("All task completed");
+//       });
+//     });
+//   });
+// });
