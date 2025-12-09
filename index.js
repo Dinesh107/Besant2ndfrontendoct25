@@ -1098,3 +1098,76 @@
 //     });
 //   });
 // });
+
+// promises - an object that manges asyanshrouns operation - wrap a promises object around (async code)
+
+// I promise to return
+
+// pending ---> resolved or rejected
+
+// new Promise(resolve, reject) => (asynchrous code)
+
+// do thses work in order
+
+// walk the dog
+// clean the kitchen
+// take out the trash
+
+function walkDog() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const dogWalked = false;
+      if (dogWalked) {
+        resolve("you walk the dog");
+      } else {
+        reject("you didnt walk the dog");
+      }
+    }, 2500);
+  });
+}
+function cleanKitchen() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const kitchenCleaned = true;
+      if (kitchenCleaned) {
+        resolve("you cleaned the dog");
+      } else {
+        reject("you didnt clean kitchen");
+      }
+    }, 3000);
+  });
+}
+
+function takeOutTheTrash() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const trashTakenOut = false;
+      if (trashTakenOut) {
+        resolve("you take out the tarsh");
+      } else {
+        reject("you didnt take out the trash");
+      }
+    }, 1500);
+  });
+}
+
+// walkDog(() => {
+//     cleanKitchen(() => {
+//        takeOutTheTrash(() => console.log("all over"))
+//     })
+// })
+
+walkDog()
+  .then((value) => {
+    console.log(value);
+    return cleanKitchen();
+  })
+  .then((value) => {
+    console.log(value);
+    return takeOutTheTrash();
+  })
+  .then((value) => {
+    console.log(value);
+    console.log("you finished the al work");
+  })
+  .catch((error) => console.error(error));
