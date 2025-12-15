@@ -1116,7 +1116,7 @@
 function walkDog() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      const dogWalked = false;
+      const dogWalked = true;
       if (dogWalked) {
         resolve("you walk the dog");
       } else {
@@ -1157,6 +1157,21 @@ function takeOutTheTrash() {
 //     })
 // })
 
+// walkDog()
+//   .then((value) => {
+//     console.log(value);
+//     return cleanKitchen();
+//   })
+//   .then((value) => {
+//     console.log(value);
+//     return takeOutTheTrash();
+//   })
+//   .then((value) => {
+//     console.log(value);
+//     console.log("you finished the al work");
+//   })
+//   .catch((error) => console.error(error));
+
 walkDog()
   .then((value) => {
     console.log(value);
@@ -1168,6 +1183,8 @@ walkDog()
   })
   .then((value) => {
     console.log(value);
-    console.log("you finished the al work");
+    console.log("you finished all work");
   })
-  .catch((error) => console.error(error));
+  .catch((error) => {
+    console.log("ERROR:", error);
+  });
