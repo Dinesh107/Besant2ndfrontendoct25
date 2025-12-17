@@ -1262,7 +1262,7 @@
 //   }
 // }
 
-// doWorks(); - 
+// doWorks(); -
 
 // Json files - Javascript object notation - data-interchange format
 // used for exchange data between a server and a web application
@@ -1270,19 +1270,96 @@
 
 // Json.stringify - convert a js object to json string
 
-// json.parse - convert the json string to json object 
+// json.parse - convert the json string to json object
 
+const jsonNames = `["hissam", "mani", "poovarasan", "sandy"]`;
 
+// console.log(names);
 
+// const jsonString = JSON.stringify(names);
 
+// const jsonEmployee = `{
+//     "name": "Aadhava",
+//     "age": 30,
+//     "isTaskFinished": true,
+//     "hobbies": ["singing", "reading", "yoga"]
+// // }`
 
+// const jsonPeople = `[
+//   {
+//     "name": "Aadhava",
+//     "age": 30,
+//     "isTaskFinished": true
+//   },
+//   {
+//     "name": "Arul",
+//     "age": 22,
+//     "isTaskFinished": true
+//   },
+//   {
+//     "name": "Karthikeyan ",
+//     "age": 26,
+//     "isTaskFinished": false
+//   }
+// ]`
 
+// console.log(jsonPeople);
 
+// const jsonString = JSON.stringify(people);
+// console.log(jsonString);
+// const parsedData = JSON.parse(jsonNames);
 
+// console.log(parsedData);
 
+// Fetch API
 
+// fetch("people.json")
+//          .then(response => response.json())
+//          .then(values => values.forEach(value => console.log(value.name)))
+//          .catch(error => console.log(error))
 
-// Fetch API 
+// fetch - function used ofr making HTTP request to fetch data (json style data, imge, files)
 
+// simpilies asynchrouns data fetching in js and used for interacting with APIs to retrivie and send dat asynchrondly over the web
 
+// fetch(url, {options})
 
+// fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+//       .then(response => {
+//         if(!response.ok) {
+//             throw new Error("Could not found resourse")
+//         }
+//         return response.json();
+//       })
+//       .then(data => console.log(data.weight))
+//       .catch(error => console.log(error))
+
+fetchData();
+
+async function fetchData() {
+  try {
+    const pokemonName = document
+      .getElementById("pokemonName")
+      .value.toLowerCase();
+
+    const response = await fetch(
+      `https://pokeapi.co/api/v2/pokemon/${pokemonName}`
+    );
+
+    if (!response.ok) {
+      throw new Error("could not fetch resourse");
+    }
+
+    const data = await response.json();
+
+    const pokemonSprite = data.sprites.front_default;
+    const imgEle = document.getElementById("pokemonSprite");
+
+    imgEle.src = pokemonSprite;
+    imgEle.style.display = "block";
+
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+}
